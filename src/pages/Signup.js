@@ -9,8 +9,6 @@ const Signup = ({ token, setUser }) => {
   const [mail, setMail] = useState("");
   const [newsletter, setNewsletter] = useState(false);
 
-  const [isLoading, setIsLoading] = useState(true);
-
   const changeUsername = (event) => {
     const value = event.target.value;
     setUsername(value);
