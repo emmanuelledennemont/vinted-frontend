@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Cookies from "js-cookie";
 
-const Signup = ({ token, setUser }) => {
+const Signup = ({ token, setUser, setToken }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [mail, setMail] = useState("");
@@ -48,6 +48,7 @@ const Signup = ({ token, setUser }) => {
               setNewsletter(false);
               setUser(response.data);
               Cookies.set("token", response.data.token, { expires: 7 });
+              setToken(Cookies.set("token", response.data.token, { expires: 7 }));
             } catch (error) {
               console.log(error.response);
             }
