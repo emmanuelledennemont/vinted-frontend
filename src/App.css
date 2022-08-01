@@ -427,7 +427,16 @@ Offer
 
   .btn-grp {
     width: 100%;
+    max-width: 72px;
   }
+
+  .btn-grp, .btn-grp button {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
   .start {
     width: 100%;
     max-width: 293px;
