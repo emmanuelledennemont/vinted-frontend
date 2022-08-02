@@ -510,6 +510,13 @@ input[type="checkbox" i] {
     margin-top: 20px;
 }
 
+.link-home{
+  color: #2cb1ba;
+  font-size: 18px;
+  text-decoration: underline;
+  margin-top: 50px;
+}
+
 @media (max-width: 712px) {
 
   .header-contain {
