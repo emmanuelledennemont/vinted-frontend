@@ -1,8 +1,11 @@
 import vinted from "../images/logo.png";
 import { Link, Navigate } from "react-router-dom";
 import Cookies from "js-cookie";
+import { useState } from "react";
 
 const Header = ({ token }) => {
+
+  const [openModal, setOpenModal] = useState(false);
   console.log("token", token);
   return (
     <header>

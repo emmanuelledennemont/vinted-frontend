@@ -25,10 +25,11 @@ const Signup = ({ token, setUser, setToken }) => {
   };
 
   return !token ? (
-    <div className="form container">
-      <h3>S'inscrire</h3>
+    <div className="form container modal-bkgd">
+      <button>X</button>
+      <h4>S'inscrire</h4>
       <form
-        className="form-inputs"
+        className="form-inputs modal-container"
         onSubmit={(event) => {
           event.preventDefault();
           const fetchData = async () => {
@@ -48,7 +49,9 @@ const Signup = ({ token, setUser, setToken }) => {
               setNewsletter(false);
               setUser(response.data);
               Cookies.set("token", response.data.token, { expires: 7 });
-              setToken(Cookies.set("token", response.data.token, { expires: 7 }));
+              setToken(
+                Cookies.set("token", response.data.token, { expires: 7 })
+              );
             } catch (error) {
               console.log(error.response);
             }
@@ -75,22 +78,26 @@ const Signup = ({ token, setUser, setToken }) => {
           onChange={changePassword}
         />
         <div className="newsletter">
+          <div className="input-chek">
           <input
             id="checkbox"
             type="checkbox"
             checked={newsletter}
             onChange={() => {
-              setNewsletter(!newsletter);
+              setNewsletter((prevState) => !prevState);
             }}
           />
           <label htmlFor="checkbox">S'inscrire à la newsletter</label>
+          </div>
           <p>
             En m'inscrivant je confirme avoir lu et accepté les Termes &
             Conditions et Politique de Confidentialité de Vinted. Je confirme
             avoir au moins 18 ans.
           </p>
         </div>
-        <button type="submit" className="submit-btn">S'inscrire</button> 
+        <button type="submit" className="submit-btn">
+          S'inscrire
+        </button>
       </form>
       <Link to="/login" className="link">
         Tu as déjà un compte ? Connecte-toi !
@@ -98,7 +105,7 @@ const Signup = ({ token, setUser, setToken }) => {
     </div>
   ) : (
     <div className="form">
-      <p>Votre compte a été créé !</p>
+        <p>Votre compte a été créé !</p>
     </div>
   );
 };

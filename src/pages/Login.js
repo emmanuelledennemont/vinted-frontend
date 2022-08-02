@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate, Navigate } from "react-router-dom";
+import { useNavigate, Navigate, Link } from "react-router-dom";
 import Cookies from "js-cookie";
 
 const Login = ({ token, setUser }) => {
@@ -21,10 +21,11 @@ const Login = ({ token, setUser }) => {
   return token ? (
     <Navigate to="/" />
   ) : (
-    <div className="login-form container">
-      <h3>Se connecter</h3>
+    <div className="form container modal-bkgd">
+      <button>X</button>
+      <h4>Se connecter</h4>
       <form
-        className="inputs"
+        className="form-inputs modal-container"
         onSubmit={(event) => {
           event.preventDefault();
           const fetchData = async () => {
@@ -48,7 +49,7 @@ const Login = ({ token, setUser }) => {
       >
         <input
           type="mail"
-          placeholder="e-mail"
+          placeholder="E-mail"
           value={mail}
           onChange={changeMail}
         />
@@ -59,8 +60,11 @@ const Login = ({ token, setUser }) => {
           onChange={changePassword}
         />
 
-        <button type="submit" className="submit-btn">se connecter</button>
+        <button type="submit" className="submit-btn">Se connecter</button>
       </form>
+      <Link to="/signup" className="link">
+      Pas encore de compte ? Inscris-toi !
+      </Link>
     </div>
   );
 };

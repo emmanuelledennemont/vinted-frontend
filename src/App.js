@@ -12,7 +12,7 @@ function App() {
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(Cookies.get("token") || null);
   const [username, setUsername] = useState(Cookies.get("username") || null);
-
+  const [openModal, setOpenModal] = useState(false);
   return (
     <div className="App">
       <Router>
@@ -22,15 +22,16 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/offers/:id" element={<Offer />} />
             <Route
-              path="/signup"
+              path="/signup"     
               element={
-                <Signup
+                <Signup 
                   token={token}
                   setToken={setToken}
                   user={user}
                   setUser={setUser}
                   username={username}
                   setUsername={setUsername}
+                  onClick={()=> setOpenModal(true)}
                 />
               }
             />
