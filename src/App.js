@@ -12,7 +12,7 @@ function App() {
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(Cookies.get("token") || null);
   const [username, setUsername] = useState(Cookies.get("username") || null);
-  const [openModal, setOpenModal] = useState(false);
+
   return (
     <div className="App">
       <Router>
@@ -31,7 +31,6 @@ function App() {
                   setUser={setUser}
                   username={username}
                   setUsername={setUsername}
-                  onClick={()=> setOpenModal(true)}
                 />
               }
             />

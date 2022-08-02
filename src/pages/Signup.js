@@ -115,12 +115,11 @@ const Signup = ({ token, setUser, setToken }) => {
     </div>
   ) : (
     <Link to="/" className="link-home">
-    <div className="form">
-      <p>Votre compte a été créé !</p>
-      <span>Redirigez vous vers la page d'accueil en cliquant ici</span>
-    </div>
-  </Link>
-    
+      <div className="form">
+        <p>Votre compte a été créé !</p>
+        <span>Redirigez vous vers la page d'accueil en cliquant ici</span>
+      </div>
+    </Link>
   );
 };
 
