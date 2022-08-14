@@ -3,30 +3,46 @@ import banner from "../images/banner.jpeg";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-const Home = () => {
+const Home = ({
+  title,
+  priceMin,
+  priceMax,
+  page,
+  limit,
+  box,
+}) => {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
-  const fetchData = async () => {
-    try {
-      const response = await axios.get(
-        "https://lereacteur-vinted-api.herokuapp.com/offers"
-      );
-      setData(response.data);
-      setIsLoading(false);
-    } catch (error) {
-      console.log(error.response);
-    }
-  };
-
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+       
+        const response = await axios.get(
+          `https://lereacteur-vinted-api.herokuapp.com/offers?title=${
+            title ? title : ""
+          }&priceMin=${priceMin ? priceMin : ""}&priceMax=${
+            priceMax ? priceMax : ""
+          }&page=${page ? page : ""}&limit=${limit ? limit : ""}&sort=${
+            box ? "price-asc" : "price-desc"
+          }`
+        );
+        setData(response.data);
+      } catch (error) {
+        console.log(error.response);
+      }
+      
+      setIsLoading(false);
+    };
+
     fetchData();
-  }, []);
+  }, [title, priceMin, priceMax, page, limit, box]);
 
   const offersArray = data.offers;
-
+ 
   return (
     <>
+    
       {isLoading ? (
         <h2>Is Loading... </h2>
       ) : (
@@ -37,7 +53,10 @@ const Home = () => {
           <div className="container">
             <div className="start">
               <h3>Prêts à faire du tri dans vos placards ?</h3>
-              <button>Vends maintenant</button>
+              
+              <Link to="/publish" >
+                <button>commencer à vendre</button>
+              </Link>
             </div>
           </div>
 
@@ -68,6 +87,7 @@ const Home = () => {
                       <img src={element.product_image.secure_url} alt="" />
                     </div>
                     <div className="card-price">{element.product_price} $</div>
+                    <div className="name">{element.product_name}</div>
 
                     {productArray.map((product, index) => {
                       return (
@@ -79,12 +99,10 @@ const Home = () => {
                     })}
                   </Link>
                 </div>
-                
               );
-          
             })}
           </div>
-        </div>
+        </div>       
       )}
     </>
   );

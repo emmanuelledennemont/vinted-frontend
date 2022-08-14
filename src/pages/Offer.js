@@ -1,10 +1,12 @@
-import { useParams } from "react-router-dom";
+import { useParams, Navigate, useNavigate} from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-const Offer = () => {
+const Offer = ({ token }) => {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const { id } = useParams();
+  const navigate = useNavigate();
 
   const fetchData = async () => {
     try {
@@ -12,19 +14,20 @@ const Offer = () => {
         `https://lereacteur-vinted-api.herokuapp.com/offer/${id}`
       );
       setData(response.data);
-      setIsLoading(false);
+      
     } catch (error) {
       console.log(error.response);
     }
+    setIsLoading(false);
   };
-
+ 
   useEffect(() => {
     fetchData();
   });
 
-  const { id } = useParams();
 
-  return (
+  return token ? (
+    <>
     <div className="offer-page">
       {isLoading ? (
         <h2>Is Loading... </h2>
@@ -70,14 +73,22 @@ const Offer = () => {
                   <img src={data.owner.account.avatar.secure_url} alt="" />
                 </div>
               )}
-              <button>Acheter</button>
+              <button onClick={() => {
+              navigate("/payment", {
+              
+              });
+            }}>Acheter</button>
             </div>
           </div>
         </div>
         </div>
-      )}
+      )} 
     </div>
+    </>
+  ) : (
+  <Navigate to= "/login"/>
   );
 };
 
 export default Offer;
+

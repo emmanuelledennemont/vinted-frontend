@@ -1,16 +1,27 @@
-const Pagination =({cardsPerPage, totalCards}) => {
 
-const pageNumbers = [];
-
-for (let i = 1; i <= Math.ceil(totalCards / cardsPerPage ); i++) {
-    pageNumbers.push(i);
-}
-
-return (
-    <>
-    
-    </>
-)
-}
-
-export default Pagination;
+const Pagination = ({
+    token,
+    setToken,
+    title,
+    setTitle,
+    priceMin,
+    priceMax,
+    setPriceMin,
+    setPriceMax,
+    page,
+    setPage,
+    limit,
+    setLimit,
+    box,
+    setBox,
+  }) => {
+  
+  
+    return (
+      <>
+      <h3>Heellloo</h3>
+      </>
+    );
+  };
+  
+  export default Pagination;

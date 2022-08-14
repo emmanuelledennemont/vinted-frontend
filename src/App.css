@@ -11,7 +11,7 @@ Global Styles
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background: #f2f5f5;
+  background: #fff;
   color: #121212;
   line-height: 1.5;
   font-size: 1rem;
@@ -119,6 +119,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+ /* flex-direction: column;*/
 }
 
 section {
@@ -201,7 +202,7 @@ a.sales-now button {
   border-radius: 5px;
   background-color: #fff;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   justify-content: space-around;
   box-shadow: 0 14px 28px 0 rgba(46, 51, 51, 0.07);
@@ -212,22 +213,28 @@ a.sales-now button {
 
 .start button {
   width: 100%;
-  height: 55px;
+  max-width: 187px;
+  height: 45px;
   background-color: #09b0ba;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1rem;
-  line-height: 16px;
   background-color: #09b0ba;
   color: #fff;
   border-radius: 0.25rem;
+  padding: 0 12px;
   border-color: transparent;
   text-transform: capitalize;
   cursor: pointer;
 }
 
+.slide{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 /*
 =============== 
 Home Cards
@@ -241,6 +248,7 @@ Home Cards
   grid-gap: 35px 18px;
   margin: 50px auto;
   padding: 0 8px 16;
+  justify-items: center;
 }
 
 .card-name {
@@ -253,6 +261,7 @@ Home Cards
 
 .card-img {
   width: 100%;
+  max-width: 350px;
 }
 
 .card-img img {
@@ -347,7 +356,6 @@ Offer
   width: 100%;
   padding: 10px;
 }
-
 
 .man {
   display: flex;
@@ -523,6 +531,77 @@ input[type="checkbox" i] {
   margin-top: 50px;
 }
 
+.slider{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:15px 0;
+  
+}
+.slider>input{
+  width: 35px;
+  height: 15px;
+ 
+}
+
+/*
+=============== 
+Publish
+===============
+*/
+
+/*
+=============== 
+Checkbox
+===============
+*/
+
+.wrapper{
+  margin-right: 25px;
+  margin-left: 10px;
+}
+.slider {
+  margin-right: 25px;
+  display: flex;
+  width: 100%;
+}
+.slider input[name="price"] {
+  display: none;
+}
+.slider input[type="checkbox"]:checked + .wrapper {
+  background-color: #2cb1ba;
+}
+.slider input[type="checkbox"]:checked + .wrapper .arrows {
+  left: 24px;
+}
+
+ .slider .arrows {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #2cb1ba ;
+  border-radius: 100%;
+  position: relative;
+  width: 16px;
+  height: 16px;
+  left: 0;
+  transition: left 100ms ease-in-out 0s;
+  font-weight: bold;
+}
+
+.slider .wrapper {
+  background-color: #2cb1ba;
+  border-radius: 10px;
+  width: 42px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+}
+
 @media (max-width: 712px) {
 
   .header-contain {
@@ -544,6 +623,7 @@ input[type="checkbox" i] {
 
   .input-search {
     margin-bottom: 15px;
+
   }
 
   .btn-grp {
@@ -565,7 +645,6 @@ input[type="checkbox" i] {
     top: 250px;
   }
 
-
   .btn-grp button {
     width: 100px;
     font-size: 0.78rem;
@@ -584,7 +663,6 @@ input[type="checkbox" i] {
 }
 
 @media (max-width: 512px) {
-
 
   .product-images img {
     width: 100%;
