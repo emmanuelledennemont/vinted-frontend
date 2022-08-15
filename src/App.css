@@ -9,8 +9,8 @@ Global Styles
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background: #eaedee;
   color: #121212;
   line-height: 1.5;
@@ -37,7 +37,6 @@ h3,
 h4 {
   text-transform: capitalize;
   line-height: 1.25;
-
 }
 
 h1 {
@@ -89,7 +88,7 @@ input {
   margin: 0 40px;
 }
 
-.input-search>input {
+.input-search > input {
   background-color: #7777;
   border: 0;
   display: flex;
@@ -242,6 +241,18 @@ a.sales-now button {
   flex-direction: column;
   align-items: center;
 }
+.range {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.checked {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 /*
 =============== 
@@ -249,6 +260,26 @@ Home Cards
 ===============
 */
 
+.input-offers {
+  display: flex;
+  padding: 15px;
+  align-items: center;
+  margin-top: 20px;
+}
+.input-offers > input {
+  width: 100%;
+  max-width: 50px;
+  outline: none;
+  border: 2px solid #2cb1ba;
+}
+
+.input-offers > label {
+  margin: 0 15px;
+  background-color: #2cb1ba;
+  color: #f3f8f9;
+  padding: 0 15px;
+  border-radius: 5px;
+}
 .all-cards {
   width: 100%;
   display: grid;
@@ -388,7 +419,7 @@ Offers
   justify-content: space-between;
 }
 
-.product-details>p {
+.product-details > p {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -397,7 +428,7 @@ Offers
   text-transform: uppercase;
 }
 
-.product-details>span {
+.product-details > span {
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -426,7 +457,7 @@ Offers
 }
 
 .separate {
-  background: hsla(0, 0%, 7%, .1);
+  background: hsla(0, 0%, 7%, 0.1);
   display: block;
   height: 1px;
   width: 100%;
@@ -490,7 +521,7 @@ Signup
   margin-top: 30px;
 }
 
-.form>button {
+.form > button {
   width: 100%;
   max-width: 25px;
   display: flex;
@@ -505,14 +536,14 @@ Signup
   flex-direction: column;
 }
 
-.form-input>input::placeholder {
+.form-input > input::placeholder {
   color: #c4c2c26c;
   opacity: 0.8;
   background: none;
   outline: none;
 }
 
-.form-inputs>input {
+.form-inputs > input {
   border: none;
   border-bottom: 1px solid #fcced3;
   height: 35px;
@@ -530,7 +561,7 @@ Signup
   align-items: center;
 }
 
-.form-inputs input[type=checkbox] {
+.form-inputs input[type="checkbox"] {
   transform: scale(2);
   margin-right: 20px;
 }
@@ -594,14 +625,11 @@ input[type="checkbox" i] {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 15px 0;
-
 }
 
-.slider>input {
+.slider > input {
   width: 35px;
   height: 15px;
-
 }
 
 /*
@@ -653,7 +681,7 @@ Publish
   justify-content: center;
 }
 
-.add-input>label {
+.add-input > label {
   align-items: center;
   border: 1px solid #0ab1ba;
   border-radius: 4px;
@@ -663,9 +691,8 @@ Publish
   width: 200px;
 }
 
-.add-input>input {
+.add-input > input {
   display: none;
-
 }
 
 .title-input {
@@ -678,7 +705,6 @@ Publish
   display: flex;
   justify-content: space-between;
   padding: 24px;
-
 }
 
 .text-input:not(:last-child) {
@@ -701,13 +727,13 @@ Publish
   margin: 25px 0 0;
 }
 
-.checkbox-input>input {
+.checkbox-input > input {
   margin: 0;
   outline: none;
   display: none;
 }
 
-.checkbox-input>label {
+.checkbox-input > label {
   color: #666;
   border: 1px solid #000;
   border-radius: 2px;
@@ -726,7 +752,7 @@ Publish
   text-align: center;
 }
 
-.form-button-add>button {
+.form-button-add > button {
   width: 100%;
   max-width: 250px;
   height: 45px;
@@ -768,11 +794,11 @@ Checkbox
   display: none;
 }
 
-.slider input[type="checkbox"]:checked+.wrapper {
+.slider input[type="checkbox"]:checked + .wrapper {
   background-color: #2cb1ba;
 }
 
-.slider input[type="checkbox"]:checked+.wrapper .arrows {
+.slider input[type="checkbox"]:checked + .wrapper .arrows {
   left: 24px;
 }
 
@@ -860,7 +886,7 @@ Payment
   padding: 24px 0;
 }
 
-.card-payment-stripe>button {
+.card-payment-stripe > button {
   width: 100%;
   background: #00c06d;
   border: 1px solid;
@@ -891,10 +917,10 @@ Payment
   width: 100%;
   height: 1px;
   margin: 24px 0;
-  background: hsla(0, 0%, 7%, .1);
+  background: hsla(0, 0%, 7%, 0.1);
 }
 
-.pay{
+.pay {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -914,7 +940,7 @@ Payment
   color: #00c06d;
 }
 
-.pay-column{
+.pay-column {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -923,7 +949,7 @@ Payment
   text-align: center;
 }
 
-.link-pay{
+.link-pay {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -931,12 +957,37 @@ Payment
   font-size: 14px;
 }
 
-.link-pay:hover{
-  text-decoration:underline;
+.link-pay:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 732px) {
+  .input-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    flex-direction: column;
+  }
+  .input-rigth {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    flex-direction: column;
+  }
+  .input-offers > label {
+    margin: 10px 0;
+    padding: 0 5px;
+    background-color: #2cb1ba;
+    color: #f3f8f9;
+    display: flex;
+    text-align: center;
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 712px) {
-
   .header-contain {
     display: flex;
     align-items: center;
@@ -956,7 +1007,6 @@ Payment
 
   .input-search {
     margin-bottom: 15px;
-
   }
 
   .btn-grp {
@@ -989,14 +1039,12 @@ Payment
     padding: 0 5px;
   }
 
-
   a.sales-now button {
     padding: 0 5px;
   }
 }
 
 @media (max-width: 512px) {
-
   .product-images img {
     width: 100%;
     max-width: 420px;
@@ -1012,19 +1060,17 @@ Payment
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(332px, 1fr));
   }
-
 }
 
 @media (max-width: 364px) {
-  .product-details>span {
+  .product-details > span {
     font-size: 12px;
   }
 
-  .product-details>p {
+  .product-details > p {
     font-size: 12px;
   }
 }
-
 
 @media (max-width: 320px) {
   .page-product {

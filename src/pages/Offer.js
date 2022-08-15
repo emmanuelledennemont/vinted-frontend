@@ -35,49 +35,45 @@ const Offer = ({ token }) => {
             </div>
             <div className="man">
               <div className="left">
-               
                 <div className="rigth">
                   <div className="infos-price">
                     <span>{data.product_price} €</span>
                   </div>
 
                   <div className="bloc-description">
-                  {data.product_details.map((element) => {
-                    return (
-                      <>
-                      
-                        {element.MARQUE && (
-                          <div className="product-details">
-                           <p> marque :</p> <span>{element.MARQUE}</span>
-                          </div>
-                        )}
-                        {element.TAILLE && (
-                          <div className="product-details">
-                           <p>taille :</p>  <span>{element.TAILLE}</span>
-                          </div>
-                        )}
-                        {element.ETAT && (
-                          <div className="product-details">
-                          
-                           <p>état :</p>  <span> {element.ETAT}</span>
-                          </div>
-                        )}
-                        {element.COULEUR && (
-                          <div className="product-details">
-                           <p>couleur:</p>  <span>{element.COULEUR}</span>
-                          </div>
-                        )}
-                        {element.EMPLACEMENT && (
-                          <div className="product-details">
-                          
-                           <p>emplacement :</p>  <span>{element.EMPLACEMENT}</span>
-                          </div>
-                        )}
-                        
-                      </>
-                    );
-                  })}
-                   </div>
+                    {data.product_details.map((element) => {
+                      return (
+                        <>
+                          {element.MARQUE && (
+                            <div className="product-details">
+                              <p> marque :</p> <span>{element.MARQUE}</span>
+                            </div>
+                          )}
+                          {element.TAILLE && (
+                            <div className="product-details">
+                              <p>taille :</p> <span>{element.TAILLE}</span>
+                            </div>
+                          )}
+                          {element.ETAT && (
+                            <div className="product-details">
+                              <p>état :</p> <span> {element.ETAT}</span>
+                            </div>
+                          )}
+                          {element.COULEUR && (
+                            <div className="product-details">
+                              <p>couleur:</p> <span>{element.COULEUR}</span>
+                            </div>
+                          )}
+                          {element.EMPLACEMENT && (
+                            <div className="product-details">
+                              <p>emplacement :</p>{" "}
+                              <span>{element.EMPLACEMENT}</span>
+                            </div>
+                          )}
+                        </>
+                      );
+                    })}
+                  </div>
                 </div>
                 <div className="separate"></div>
                 <div className="card-description">
@@ -88,14 +84,17 @@ const Offer = ({ token }) => {
                     <p className="desc">{data.product_description}</p>
                   )}
                   <div className="owner">
-                  {data.owner.account.avatar && (
-                    <div className="offer-avatar">
-                      <img src={data.owner.account.avatar.secure_url} alt="" />
-                    </div>
-                  )}
-                  {data.owner && (
-                    <p className="username">{data.owner.account.username}</p>
-                  )}
+                    {data.owner.account.avatar && (
+                      <div className="offer-avatar">
+                        <img
+                          src={data.owner.account.avatar.secure_url}
+                          alt=""
+                        />
+                      </div>
+                    )}
+                    {data.owner && (
+                      <p className="username">{data.owner.account.username}</p>
+                    )}
                   </div>
                   <Link
                     to="/payment "

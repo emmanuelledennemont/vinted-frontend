@@ -7,9 +7,9 @@ const PriceRange = ({
   setFetchRangeValues,
   fetchRangeValues,
   priceMin,
-  priceMax,
-  setPriceMin,
-  setPriceMax,
+rtl,
+              priceMax,
+               
 }) => {
   const [rangeValues, setRangeValues] = useState([0, 500]);
 
@@ -18,16 +18,12 @@ const PriceRange = ({
       step={5}
       min={MIN}
       max={MAX}
+      rtl={rtl}
       fetchRangeValues={fetchRangeValues}
-      priceMin={priceMin}
-      priceMax={priceMax}
       values={rangeValues}
       onChange={(values) => setRangeValues(values)}
       onFinalChange={(values) => {
-        setFetchRangeValues(values)
-        setPriceMin(setPriceMin)
-        setPriceMax(setPriceMax)
-        ;
+        setFetchRangeValues(values);
       }}
       renderTrack={({ props, children }) => (
         <div

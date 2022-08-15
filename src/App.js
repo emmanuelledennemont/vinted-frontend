@@ -19,9 +19,9 @@ const stripePromise = loadStripe(
 function App() {
   const [token, setToken] = useState(Cookies.get("token") || null);
   const [title, setTitle] = useState("");
-  const [box, setBox] = useState(true);
-  const [priceMin, setPriceMin] = useState("");
-  const [priceMax, setPriceMax] = useState("");
+  const [sortPrice, setSortPrice] = useState(true);
+  const [priceMin, setPriceMin] = useState(null);
+  const [priceMax, setPriceMax] = useState(null);
   const [fetchRangeValues, setFetchRangeValues] = useState([0, 500]);
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(10);
@@ -46,8 +46,8 @@ function App() {
           setPage={setPage}
           limit={limit}
           setLimit={setLimit}
-          box={box}
-          setBox={setBox}
+          sortPrice={sortPrice}
+          setSortPrice={setSortPrice}
         />
         <main>
           <Routes>
@@ -65,8 +65,8 @@ function App() {
                   setPage={setPage}
                   limit={limit}
                   setLimit={setLimit}
-                  box={box}
-                  setBox={setBox}
+                  sortPrice={sortPrice}
+                  setSortPrice={setSortPrice}
                   total={total}
                   setTotal={setTotal}
                 />

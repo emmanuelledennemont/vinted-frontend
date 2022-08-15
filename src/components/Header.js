@@ -15,8 +15,9 @@ const Header = ({
   setPage,
   limit,
   setLimit,
-  box,
-  setBox,
+  sortPrice,
+  setSortPrice,
+  fetchRangeValues,
   setFetchRangeValues,
 }) => {
   const location = useLocation();
@@ -72,68 +73,32 @@ const Header = ({
 
         {location.pathname === "/" ? (
           <div className="slider container">
-            <span>Trier par prix : </span>
-            <input
-              type="checkbox"
-              checked={box}
-              onChange={() => {}}
-              name="price"
-            />
-            <div
-              className="wrapper"
-              onClick={() => {
-                setBox(!box);
-              }}
-            >
-              <div className="arrows">
-                <span>{box ? "⇣" : "⇡"}</span>
+            <div className="checked">
+              <span>Trier par prix : </span>
+              <input
+                type="checkbox"
+                checked={sortPrice}
+                onChange={() => {}}
+                name="price"
+              />
+              <div
+                className="wrapper"
+                onClick={() => {
+                  setSortPrice(!sortPrice);
+                }}
+              >
+                <div className="arrows">
+                  <span>{sortPrice ? "⇣" : "⇡"}</span>
+                </div>
               </div>
             </div>
             <div className="range">
               <span style={{ marginRight: 10 }}>Prix entre : </span>
               <PriceRange
+                fetchRangeValues={fetchRangeValues}
                 setFetchRangeValues={setFetchRangeValues}
-                priceMin={priceMin}
-                priceMax={priceMax}
-                setPriceMin={setPriceMin}
-                setPriceMax={setPriceMax}
               />
             </div>
-            <input
-              min="0"
-              type="number"
-              id="price-min"
-              value={priceMin}
-              onChange={(event) => setPriceMin(Number(event.target.value))}
-            />
-            <label htmlFor="price-min">Prix min</label>
-
-            <input
-              min="0"
-              type="number"
-              id="price-max"
-              value={priceMax}
-              onChange={(event) => setPriceMax(Number(event.target.value))}
-            />
-            <label htmlFor="price-max">Prix max</label>
-
-            <input
-              min="0"
-              type="number"
-              id="page"
-              value={page}
-              onChange={(event) => setPage(Number(event.target.value))}
-            />
-            <label htmlFor="page">Page</label>
-
-            <input
-              type="number"
-              min="0"
-              id="page"
-              value={limit}
-              onChange={(event) => setLimit(Number(event.target.value))}
-            />
-            <label htmlFor="page">Offres</label>
           </div>
         ) : null}
       </header>
