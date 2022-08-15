@@ -1,6 +1,7 @@
 import vinted from "../images/logo.png";
 import { Link, Navigate, useLocation } from "react-router-dom";
 import Cookies from "js-cookie";
+import PriceRange from "./PriceRange";
 
 const Header = ({
   token,
@@ -16,6 +17,7 @@ const Header = ({
   setLimit,
   box,
   setBox,
+  setFetchRangeValues,
 }) => {
   const location = useLocation();
 
@@ -67,65 +69,74 @@ const Header = ({
             )}
           </div>
         </nav>
-      </header>
 
-      {location.pathname === "/" ? (
-        <div className="slider container">
-          <span >Trier par prix : </span>
-          <input
-            type="checkbox"
-            checked={box}
-            onChange={() => {}}
-            name="price"
-          />
-          <div
-            className="wrapper"
-            onClick={() => {
-              setBox(!box);
-            }}
-          >
-            <div className="arrows">
-              <span>{box ? "⇣" : "⇡"}</span>
+        {location.pathname === "/" ? (
+          <div className="slider container">
+            <span>Trier par prix : </span>
+            <input
+              type="checkbox"
+              checked={box}
+              onChange={() => {}}
+              name="price"
+            />
+            <div
+              className="wrapper"
+              onClick={() => {
+                setBox(!box);
+              }}
+            >
+              <div className="arrows">
+                <span>{box ? "⇣" : "⇡"}</span>
+              </div>
             </div>
+            <div className="range">
+              <span style={{ marginRight: 10 }}>Prix entre : </span>
+              <PriceRange
+                setFetchRangeValues={setFetchRangeValues}
+                priceMin={priceMin}
+                priceMax={priceMax}
+                setPriceMin={setPriceMin}
+                setPriceMax={setPriceMax}
+              />
+            </div>
+            <input
+              min="0"
+              type="number"
+              id="price-min"
+              value={priceMin}
+              onChange={(event) => setPriceMin(Number(event.target.value))}
+            />
+            <label htmlFor="price-min">Prix min</label>
+
+            <input
+              min="0"
+              type="number"
+              id="price-max"
+              value={priceMax}
+              onChange={(event) => setPriceMax(Number(event.target.value))}
+            />
+            <label htmlFor="price-max">Prix max</label>
+
+            <input
+              min="0"
+              type="number"
+              id="page"
+              value={page}
+              onChange={(event) => setPage(Number(event.target.value))}
+            />
+            <label htmlFor="page">Page</label>
+
+            <input
+              type="number"
+              min="0"
+              id="page"
+              value={limit}
+              onChange={(event) => setLimit(Number(event.target.value))}
+            />
+            <label htmlFor="page">Offres</label>
           </div>
-
-          <input
-            min="0"
-            type="number"
-            id="price-min"
-            value={priceMin}
-            onChange={(event) => setPriceMin(Number(event.target.value))}
-          />
-          <label htmlFor="price-min">Prix min</label>
-
-          <input
-            min="0"
-            type="number"
-            id="price-max"
-            value={priceMax}
-            onChange={(event) => setPriceMax(Number(event.target.value))}
-          />
-          <label htmlFor="price-max">Prix max</label>
-
-          <input
-            min="0"
-            type="number"
-            id="page"
-            value={page}
-            onChange={(event) => setPage(Number(event.target.value))}
-          />
-          <label htmlFor="page">Page</label>
-
-          <input
-            type="number"
-            min="0"
-            id="page"
-            value={limit}
-            onChange={(event) => setLimit(Number(event.target.value))}
-          />
-          <label htmlFor="page">Offres</label>
-        </div>
-      ) : null}
+        ) : null}
+      </header>
     </>
   );
 };

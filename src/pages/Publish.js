@@ -16,7 +16,6 @@ const Publish = ({ token }) => {
   const [dataImg, setDataImg] = useState();
   const [acceptedExchange, setAcceptedExchange] = useState(false);
 
-
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
@@ -70,7 +69,7 @@ const Publish = ({ token }) => {
             ) : (
               <div className="drag-add">
                 <div className="add-input">
-                  <label htmlFor="file" className="add-file">
+                  <label htmlFor="file" className="label-add-file">
                     <span className="add-img">+</span>
                     <span>Ajoute une photo</span>
                   </label>
@@ -89,8 +88,8 @@ const Publish = ({ token }) => {
           </div>
           <div className="title-input">
             <div className="text-input">
-              <label htmlFor="title" className="add-file">
-                <h4>Titre</h4>
+              <label htmlFor="title">
+                <h6>Titre</h6>
               </label>
 
               <input
@@ -105,8 +104,8 @@ const Publish = ({ token }) => {
               />
             </div>
             <div className="text-input">
-              <label htmlFor="description" className="add-file">
-                <h4>Décris ton article</h4>
+              <label htmlFor="description">
+                <h6>Décris ton article</h6>
               </label>
 
               <textarea
@@ -123,8 +122,8 @@ const Publish = ({ token }) => {
           </div>
           <div className="title-input">
             <div className="text-input">
-              <label htmlFor="selectedBrand" className="add-file">
-                <h4>Marque</h4>
+              <label htmlFor="selectedBrand">
+                <h6>Marque</h6>
               </label>
 
               <input
@@ -139,8 +138,8 @@ const Publish = ({ token }) => {
               />
             </div>
             <div className="text-input">
-              <label htmlFor="selectedSize" className="file-add">
-                <h4>Taille</h4>
+              <label htmlFor="selectedSize">
+                <h6>Taille</h6>
               </label>
 
               <input
@@ -155,8 +154,8 @@ const Publish = ({ token }) => {
               />
             </div>
             <div className="text-input">
-              <label htmlFor="color" className="add-file">
-                <h4>Couleur</h4>
+              <label htmlFor="color">
+                <h6>Couleur</h6>
               </label>
 
               <input
@@ -171,7 +170,7 @@ const Publish = ({ token }) => {
               />
             </div>
             <div className="text-input">
-              <label htmlFor="wearRate" className="add-file">
+              <label htmlFor="wearRate">
                 <h4>Etat</h4>
               </label>
 
@@ -184,8 +183,8 @@ const Publish = ({ token }) => {
               />
             </div>
             <div className="text-input">
-              <label htmlFor="city" className="add-file">
-                <h4>Lieu</h4>
+              <label htmlFor="city">
+                <h6>Lieu</h6>
               </label>
 
               <input
@@ -198,9 +197,9 @@ const Publish = ({ token }) => {
             </div>
           </div>
           <div className="title-input">
-            <div className="text-input">
-              <label htmlFor="price" className="add-file">
-                <h4>Prix</h4>
+            <div className="text-input ">
+              <label htmlFor="price">
+                <h6>Prix</h6>
               </label>
 
               <div className="checkbox-consents">

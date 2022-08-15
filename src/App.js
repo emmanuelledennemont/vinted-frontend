@@ -22,7 +22,7 @@ function App() {
   const [box, setBox] = useState(true);
   const [priceMin, setPriceMin] = useState("");
   const [priceMax, setPriceMax] = useState("");
-  const [fetchRangeValues, setFetchRangeValues] = useState([0, 5000]);
+  const [fetchRangeValues, setFetchRangeValues] = useState([0, 500]);
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(10);
   const [total, setTotal] = useState(0);
