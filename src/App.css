@@ -729,8 +729,8 @@ Publish
 
 .checkbox-input > input {
   margin: 0;
-  outline: none;
-  display: none;
+  /*outline: none;
+  display: none;*/
 }
 
 .checkbox-input > label {
@@ -788,6 +788,7 @@ Checkbox
   margin-right: 25px;
   display: flex;
   width: 100%;
+  padding-bottom: 10px;
 }
 
 .slider input[name="price"] {
@@ -1054,6 +1055,14 @@ Payment
 }
 
 @media (max-width: 512px) {
+
+  .range>span{
+    font-size: 12px;
+  }
+  .checked>span{
+    font-size: 12px;
+  }
+  
   .product-images img {
     width: 100%;
     max-width: 420px;

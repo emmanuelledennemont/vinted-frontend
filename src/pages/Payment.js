@@ -51,21 +51,21 @@ const Payment = ({ token }) => {
           <div className="">
             <div className="card-payment-contain first-bloc">
               <span>Commande</span>
-              <span>{price} $</span>
+              <span>{price}$</span>
               <span>Frais protection acheteurs</span>
-              <span>{protectionFees} $</span>
+              <span>{protectionFees}$</span>
               <span>Frais de port</span>
-              <span>{shippingFees} $</span>
+              <span>{shippingFees}$</span>
             </div>
             <div className="separation"></div>
             <div className="card-payment-contain second-bloc">
               <span>Total</span>
-              <span>{totalPrice} $</span>
+              <span>{totalPrice}$</span>
             </div>
             <div className="conditions-bloc card-payment-contain"></div>
             <p>
               Il ne vous reste plus qu'une étape pour vous offrir
-              <span className="bold-span">{title}</span> vous allez payer <span className="bold-span-price">{totalPrice}</span>
+              <span className="bold-span">{title}</span> vous allez payer <span className="bold-span-price">{totalPrice}$</span>
               (frais de protection et frais de port inclus).
             </p>
             <div className="separation"></div>
