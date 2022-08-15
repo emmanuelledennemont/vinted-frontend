@@ -171,7 +171,7 @@ const Publish = ({ token }) => {
             </div>
             <div className="text-input">
               <label htmlFor="wearRate">
-                <h4>Etat</h4>
+                <h6>Etat</h6>
               </label>
 
               <input

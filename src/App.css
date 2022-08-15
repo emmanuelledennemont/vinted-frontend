@@ -961,6 +961,15 @@ Payment
   text-decoration: underline;
 }
 
+.bold-span {
+  font-weight: bold;
+  padding: 0 0 0 5px;
+}
+.bold-span-price {
+  font-weight: bold;
+  padding: 0 5px 0 0;
+}
+
 @media (max-width: 732px) {
   .input-left {
     display: flex;
