@@ -7,7 +7,7 @@ const Login = ({ token, setToken, setUser }) => {
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  
+
   const navigate = useNavigate();
 
   const fetchData = async () => {

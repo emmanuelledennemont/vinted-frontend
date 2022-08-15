@@ -7,9 +7,8 @@ const PriceRange = ({
   setFetchRangeValues,
   fetchRangeValues,
   priceMin,
-rtl,
-              priceMax,
-               
+  rtl,
+  priceMax,
 }) => {
   const [rangeValues, setRangeValues] = useState([0, 500]);
 

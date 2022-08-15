@@ -79,14 +79,14 @@ const Payment = ({ token }) => {
         </form>
       ) : (
         <div className="pay-column">
-        <div className="pay">
-        <span>Paiement effectué ! </span>
-        <span>Merci pour votre achat</span>
+          <div className="pay">
+            <span>Paiement effectué ! </span>
+            <span>Merci pour votre achat</span>
+          </div>
+          <Link to="/" className="link-pay">
+            Cliquez ici pour continuer votre shopping
+          </Link>
         </div>
-           <Link to="/" className="link-pay">
-           Cliquez ici pour continuer votre shopping 
-         </Link>
-         </div>
       )}
     </div>
   );

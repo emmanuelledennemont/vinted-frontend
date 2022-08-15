@@ -244,11 +244,11 @@ const Publish = ({ token }) => {
           </div>
         </form>
         {dataImg && (
-        <div className="picture-publish">
-          <p>Votre Offre est bien publiée</p>
-          <img src={dataImg} alt="Offre Publiée" />
-        </div>
-      )}
+          <div className="picture-publish">
+            <p>Votre Offre est bien publiée</p>
+            <img src={dataImg} alt="Offre Publiée" />
+          </div>
+        )}
       </div>
     </div>
   ) : (
