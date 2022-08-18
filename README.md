@@ -2,7 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+#This site was build using netlify 
+[
+](https://snazzy-sopapillas-33bb80.netlify.app/)#
+
+
+# Available Scripts
 
 In the project directory, you can run:
 
