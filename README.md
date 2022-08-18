@@ -3,8 +3,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 #This site was build using netlify 
-[
-](https://snazzy-sopapillas-33bb80.netlify.app/)#
+
+https://snazzy-sopapillas-33bb80.netlify.app/
 
 
 # Available Scripts
